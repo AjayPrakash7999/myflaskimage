@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('SCM checkout'){
             steps{
-            git branch: 'main', url: 'https://github.com/AjayPrakash7999/myflaskimage.git'
+            git branch: 'main', url: 'https://github.com/AjayPrakash7999/myimage.git'
             }
         }
         stage('docker image '){
@@ -21,12 +21,6 @@ pipeline{
         stage(' push image '){
                 steps{
                 sh '/usr/bin/docker image push ajayprakash/myflaskimage'
-                }   
-        }
-        
-        stage(' conformation  '){
-                steps{
-                input 'do you want to proceed'
                 }   
         }
         
